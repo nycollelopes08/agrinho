@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Agro Forte | Futuro Sustentável - DOM Interativo</title>
+    <title>Agro Forte | Futuro Sustentável - Formulário Interativo</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        /* ==================== RESET E BASE ==================== */
         * {
             margin: 0;
             padding: 0;
@@ -29,14 +30,14 @@
             padding: 0 24px;
         }
 
-        /* ===== HEADER ===== */
-        .navbar {
-            padding: 20px 0;
+        /* ==================== HEADER (ID e CLASS) ==================== */
+        #main-header {
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 100;
+            padding: 20px 0;
         }
 
         .nav-flex {
@@ -78,8 +79,8 @@
             color: #3b8c2c;
         }
 
-        /* ===== HERO ===== */
-        .hero {
+        /* ==================== HERO SECTION ==================== */
+        #hero-section {
             padding: 80px 0 70px;
             background: linear-gradient(105deg, #f1f7ea 0%, #e9f2e2 100%);
             border-bottom: 1px solid #dde6d3;
@@ -109,7 +110,7 @@
             border-radius: 40px;
         }
 
-        .hero h1 {
+        #main-title {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
@@ -117,11 +118,11 @@
             color: #1e3a1e;
         }
 
-        .hero h1 .highlight {
+        #main-title .highlight {
             color: #c28a1f;
         }
 
-        .hero-sub {
+        #hero-sub-message {
             font-size: 1.3rem;
             color: #2b4b2b;
             font-weight: 400;
@@ -129,6 +130,23 @@
             border-left: 5px solid #6ba539;
             padding-left: 20px;
             max-width: 90%;
+            transition: all 0.3s ease;
+        }
+
+        /* Área de saudação personalizada */
+        #greeting-area {
+            background: rgba(44, 110, 47, 0.1);
+            padding: 16px 24px;
+            border-radius: 60px;
+            margin-bottom: 24px;
+            text-align: center;
+            border: 1px solid #c8e0b8;
+        }
+
+        #greeting-message {
+            font-weight: 600;
+            color: #1e5a1e;
+            font-size: 1rem;
         }
 
         .btn-group {
@@ -155,23 +173,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #2c6e2f;
-            color: #2c6e2f;
-            padding: 12px 30px;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-
-        .btn-outline:hover {
-            background: #2c6e2f;
-            color: white;
-        }
-
         .hero-image {
             flex: 0.9;
             text-align: center;
@@ -183,10 +184,88 @@
             box-shadow: 0 25px 40px -18px rgba(0,0,0,0.2);
         }
 
-        /* ===== CARDS ===== */
-        .cards-section {
-            padding: 80px 0;
+        /* ==================== FORMULÁRIO SEMÂNTICO ==================== */
+        #form-section {
+            padding: 70px 0;
             background: white;
+            border-bottom: 1px solid #e0e8d8;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fafbf7;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2ecd6;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #1e3a1e;
+            margin-bottom: 8px;
+        }
+
+        .form-sub {
+            text-align: center;
+            color: #5a7352;
+            margin-bottom: 32px;
+        }
+
+        /* Estilos para elementos do formulário */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #2c5e2a;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #dde6d3;
+            border-radius: 48px;
+            font-size: 1rem;
+            transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4c9a2a;
+            box-shadow: 0 0 0 3px rgba(76, 154, 42, 0.1);
+        }
+
+        #submit-btn {
+            width: 100%;
+            background-color: #2c6e2f;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 48px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+
+        #submit-btn:hover {
+            background-color: #1f5522;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== CARDS ==================== */
+        #cards-section {
+            padding: 80px 0;
+            background: #ffffff;
         }
 
         .section-title {
@@ -195,14 +274,6 @@
             font-weight: 700;
             color: #1C3F1C;
             margin-bottom: 16px;
-        }
-
-        .section-sub {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 56px auto;
-            color: #445c3e;
-            font-size: 1.1rem;
         }
 
         .cards-grid {
@@ -223,10 +294,6 @@
             text-align: center;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
         .card-icon {
             font-size: 3rem;
             color: #4c9a2a;
@@ -240,81 +307,28 @@
             color: #1f3b1a;
         }
 
-        .card p {
-            color: #2f4d2d;
-            line-height: 1.5;
-            margin-bottom: 24px;
-        }
-
-        .card-details {
-            background-color: #f5f9f0;
-            padding: 16px;
-            border-radius: 16px;
-            margin: 16px 0;
-            font-size: 0.9rem;
-            display: none;
-            text-align: left;
-            transition: all 0.3s;
-        }
-
-        .card-details.show {
-            display: block;
-        }
-
-        .toggle-details {
-            background: none;
-            border: 1px solid #4c9a2a;
-            color: #2c6e2f;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 8px;
-            transition: all 0.2s;
-        }
-
-        .toggle-details:hover {
-            background: #4c9a2a;
-            color: white;
-        }
-
-        /* ===== ESTATÍSTICAS COM CONTADOR ===== */
-        .eco-highlight {
+        /* ==================== ESTATÍSTICAS ==================== */
+        #stats-section {
             background: linear-gradient(120deg, #eef5e8, #fff9ef);
             padding: 70px 0;
             border-top: 1px solid #dde2d4;
             border-bottom: 1px solid #dde2d4;
         }
 
-        .highlight-flex {
+        .stats-flex {
             display: flex;
             flex-wrap: wrap;
+            gap: 40px;
             align-items: center;
-            gap: 56px;
+            justify-content: center;
         }
 
-        .highlight-text {
-            flex: 1;
-        }
-
-        .highlight-text h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            color: #2c5e2a;
-        }
-
-        .highlight-text p {
-            font-size: 1.1rem;
-            margin-bottom: 28px;
-            color: #2e4829;
-        }
-
-        .stats {
+        .stats-numbers {
             display: flex;
             gap: 32px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            justify-content: center;
+            flex: 1;
         }
 
         .stat-item {
@@ -322,9 +336,7 @@
             border-radius: 24px;
             padding: 20px 24px;
             text-align: center;
-            box-shadow: 0 7px 14px rgba(0,0,0,0.03);
             min-width: 130px;
-            transition: transform 0.2s;
         }
 
         .stat-number {
@@ -333,78 +345,43 @@
             color: #4c9a2a;
         }
 
-        .stat-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* mensagem dinâmica */
-        .dynamic-message {
-            background: #e8f0e2;
-            padding: 16px 24px;
-            border-radius: 20px;
-            margin-top: 30px;
-            text-align: center;
-            font-weight: 500;
-            border-left: 6px solid #4c9a2a;
-        }
-
-        /* ===== CTA ===== */
-        .cta-section {
+        /* ==================== CTA ==================== */
+        #cta-section {
             padding: 80px 0 90px;
             background-color: #1e3a1e;
             text-align: center;
             color: white;
         }
 
-        .cta-section h2 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .btn-cta {
+        #cta-button {
             background-color: #e7b42c;
             color: #1e3a1e;
             padding: 16px 38px;
             font-weight: 800;
             border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
+            border: none;
             font-size: 1.1rem;
-            transition: all 0.2s;
             cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .footer {
+        /* ==================== FOOTER ==================== */
+        #main-footer {
             background: #0f2812;
             padding: 48px 0 32px;
             color: #cde0c2;
-        }
-
-        .footer-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #2a4a23;
         }
 
         @media (max-width: 860px) {
-            .hero h1 { font-size: 2.5rem; }
-            .stats { justify-content: center; }
+            #main-title { font-size: 2.5rem; }
+            .stats-flex { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-<header class="navbar">
+<header id="main-header">
     <div class="container nav-flex">
         <div class="logo">AGRO<span>FORTE</span></div>
         <ul class="nav-links">
@@ -418,17 +395,24 @@
 </header>
 
 <main>
-    <section class="hero">
+    <!-- Hero Section -->
+    <section id="hero-section">
         <div class="container hero-grid">
             <div class="hero-content">
                 <span class="hero-badge"><i class="fas fa-leaf"></i> Produção + Planeta</span>
-                <h1>Agro Forte, <span class="highlight">Futuro Sustentável</span></h1>
-                <div class="hero-sub" id="heroSubMessage">
+                <h1 id="main-title">Agro Forte, <span class="highlight">Futuro Sustentável</span></h1>
+                
+                <!-- Área de saudação personalizada (será preenchida via JS) -->
+                <div id="greeting-area">
+                    <p id="greeting-message">🌱 Olá, visitante! Faça seu cadastro para receber uma saudação personalizada.</p>
+                </div>
+                
+                <div id="hero-sub-message">
                     Equilíbrio entre alta produtividade e a proteção dos recursos naturais. O amanhã se constrói no campo, hoje.
                 </div>
                 <div class="btn-group">
-                    <button class="btn-primary" id="updateMessageBtn">🌱 Quero um futuro sustentável</button>
-                    <button class="btn-outline" id="resetMessageBtn">↺ Mensagem original</button>
+                    <button class="btn-primary" id="updateMessageBtn">🌾 Mensagem inspiradora</button>
+                    <button class="btn-primary" id="resetMessageBtn" style="background-color:#6c8b5e;">↺ Restaurar</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -437,222 +421,253 @@
         </div>
     </section>
 
-    <!-- TRÊS BLOCOS (com JavaScript para mostrar/esconder detalhes) -->
-    <section class="cards-section">
+    <!-- FORMULÁRIO SEMÂNTICO com input, label e button -->
+    <section id="form-section">
         <div class="container">
-            <h2 class="section-title">Pilares do amanhã que já funcionam</h2>
-            <p class="section-sub">Clique nos botões para ver detalhes técnicos de cada pilar</p>
+            <div class="form-container">
+                <h2 class="form-title">🌿 Cadastro de Produtor</h2>
+                <p class="form-sub">Informe seus dados e receba uma saudação personalizada!</p>
+                
+                <!-- Formulário com tag semântica -->
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="user-name">Nome completo:</label>
+                        <input type="text" id="user-name" name="user-name" placeholder="Ex: João da Silva" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="user-city">Cidade / Fazenda:</label>
+                        <input type="text" id="user-city" name="user-city" placeholder="Ex: Sorriso - MT">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="user-email">E-mail para contato:</label>
+                        <input type="email" id="user-email" name="user-email" placeholder="seuemail@exemplo.com" required>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn">
+                        <i class="fas fa-seedling"></i> Gerar saudação personalizada
+                    </button>
+                </form>
+                
+                <!-- Exibição do resultado do processamento da variável -->
+                <div id="form-feedback" style="margin-top: 24px; padding: 12px; border-radius: 40px; background: #e9f3e2; text-align: center; display: none;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="cards-section">
+        <div class="container">
+            <h2 class="section-title">Pilares do agro sustentável</h2>
             <div class="cards-grid">
-                <!-- Card 1 -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-microchip"></i></div>
                     <h3>Tecnologia & Eficiência</h3>
-                    <p>Agricultura de precisão, IoT, drones e gestão inteligente para reduzir desperdícios.</p>
-                    <div class="card-details" id="details1">
-                        <strong>🔧 Detalhes técnicos:</strong><br>
-                        • Sensores de umidade do solo com conexão 5G<br>
-                        • Pulverização autônoma com redução de 40% de insumos<br>
-                        • Plataforma de análise de dados em tempo real
-                    </div>
-                    <button class="toggle-details" data-target="details1">📋 Mostrar detalhes</button>
+                    <p>Agricultura de precisão, IoT e gestão inteligente para reduzir desperdícios e aumentar produtividade.</p>
                 </div>
-                <!-- Card 2 -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-seedling"></i></div>
                     <h3>Práticas Regenerativas</h3>
-                    <p>Plantio direto, rotação de culturas e manejo integrado para solo vivo.</p>
-                    <div class="card-details" id="details2">
-                        <strong>🌾 Práticas regenerativas:</strong><br>
-                        • Sequestro de carbono no solo: +3 ton/ha/ano<br>
-                        • Recuperação de nascentes e matas ciliares<br>
-                        • Integração lavoura-pecuária-floresta (ILPF)
-                    </div>
-                    <button class="toggle-details" data-target="details2">🌿 Mostrar detalhes</button>
+                    <p>Plantio direto, rotação de culturas e manejo integrado para solo vivo e águas protegidas.</p>
                 </div>
-                <!-- Card 3 -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-chart-line"></i></div>
                     <h3>Resultados & Sustentabilidade</h3>
-                    <p>Redução da pegada de carbono e maior rentabilidade com créditos verdes.</p>
-                    <div class="card-details" id="details3">
-                        <strong>📈 Indicadores econômicos:</strong><br>
-                        • ROI 28% maior comparado ao método tradicional<br>
-                        • Certificação ISO 14001 e selo carbono neutro<br>
-                        • Acesso a mercados internacionais com ágio verde
-                    </div>
-                    <button class="toggle-details" data-target="details3">💰 Mostrar detalhes</button>
+                    <p>Redução da pegada de carbono e maior rentabilidade com certificações verdes.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção com contadores dinâmicos (JavaScript atualiza valores ao carregar/rolar) -->
-    <section class="eco-highlight">
-        <div class="container highlight-flex">
-            <div class="highlight-text">
-                <h2>Equilíbrio que gera resultado</h2>
-                <p>Produtividade recorde e meio ambiente em harmonia. Nossos números comprovam o compromisso com o futuro sustentável.</p>
-                <div class="stats" id="statsContainer">
-                    <div class="stat-item">
-                        <div class="stat-number" id="counterProd">0</div>
-                        <div class="stat-label">aumento de produtividade</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="counterWater">0</div>
-                        <div class="stat-label">redução no uso de água</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="counterCo2">0</div>
-                        <div class="stat-label">toneladas CO₂ evitadas</div>
-                    </div>
+    <!-- Estatísticas -->
+    <section id="stats-section">
+        <div class="container stats-flex">
+            <div class="stats-numbers">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat-prod">+32%</div>
+                    <div class="stat-label">produtividade sustentável</div>
                 </div>
-                <!-- Área de mensagem dinâmica alterada por JS -->
-                <div class="dynamic-message" id="dynamicMessage">
-                    💡 A sustentabilidade é o caminho para o agro do futuro.
+                <div class="stat-item">
+                    <div class="stat-number" id="stat-water">-46%</div>
+                    <div class="stat-label">uso de água na irrigação</div>
                 </div>
-            </div>
-            <div class="highlight-image">
-                <img src="https://placehold.co/500x400/d9e6ce/2b5e24?text=Tecnologia+Verde&font=roboto" alt="Tecnologia verde">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat-co2">2.1M</div>
+                    <div class="stat-label">ton CO₂ evitadas/ano</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA final -->
-    <section class="cta-section">
+    <!-- CTA -->
+    <section id="cta-section">
         <div class="container">
             <h2>Faça parte da nova era do agro</h2>
             <p>Empresas, cooperativas e produtores já colhem os frutos do equilíbrio entre produção e meio ambiente.</p>
-            <button class="btn-cta" id="ctaAlertBtn"><i class="fas fa-tractor"></i> Quero conhecer cases de sucesso</button>
+            <button id="cta-button"><i class="fas fa-tractor"></i> Quero conhecer cases de sucesso</button>
         </div>
     </section>
 </main>
 
-<footer class="footer">
+<footer id="main-footer">
     <div class="container">
-        <div class="copyright">
-            <p>© 2026 Agro Forte | Compromisso com o amanhã sustentável. 🌱</p>
-        </div>
+        <p>© 2026 Agro Forte | Compromisso com o amanhã sustentável. 🌱</p>
     </div>
 </footer>
 
 <script>
-    // ======================== 1. MANIPULAÇÃO DE TEXTO (ALTERA MENSAGEM DO HERO) ========================
-    const heroMessageElement = document.getElementById('heroSubMessage');
+    // ========== VARIÁVEIS GLOBAIS PARA ARMAZENAR INFORMAÇÕES ==========
+    let usuarioNome = "";
+    let usuarioCidade = "";
+    let usuarioEmail = "";
+    
+    // ========== 1. MANIPULAÇÃO DE TEXTO (HERO) ==========
+    const heroMessageElement = document.getElementById('hero-sub-message');
     const updateBtn = document.getElementById('updateMessageBtn');
-    const resetBtn = document.getElementById('resetMessageBtn');
-
+    const resetMsgBtn = document.getElementById('resetMessageBtn');
+    
+    // Função que altera o texto da mensagem principal
     function alterarMensagemHero() {
         heroMessageElement.innerHTML = '🌍 "Agro forte é aquele que respeita o amanhã. Tecnologia + Floresta = Colheita para sempre." 🌾';
         heroMessageElement.style.fontWeight = '500';
         heroMessageElement.style.borderLeftColor = '#e7b42c';
     }
-
+    
     function resetMensagemHero() {
         heroMessageElement.innerHTML = 'Equilíbrio entre alta produtividade e a proteção dos recursos naturais. O amanhã se constrói no campo, hoje.';
         heroMessageElement.style.fontWeight = '400';
         heroMessageElement.style.borderLeftColor = '#6ba539';
     }
-
-    updateBtn.addEventListener('click', alterarMensagemHero);
-    resetBtn.addEventListener('click', resetMensagemHero);
-
-    // ======================== 2. MOSTRAR/ESCONDER DETALHES DOS CARDS ========================
-    // Seleciona todos os botões com a classe 'toggle-details'
-    const toggleButtons = document.querySelectorAll('.toggle-details');
     
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const targetId = this.getAttribute('data-target');
-            const detailsDiv = document.getElementById(targetId);
-            
-            // Alterna a classe 'show' para exibir ou ocultar
-            if (detailsDiv.classList.contains('show')) {
-                detailsDiv.classList.remove('show');
-                this.innerHTML = this.innerHTML.replace('🙈 Ocultar', '📋 Mostrar detalhes');
-                if (this.innerHTML.includes('Ocultar')) {
-                    // Ajuste para garantir textos corretos
-                }
-                this.innerHTML = this.innerHTML.includes('Tecnologia') ? '📋 Mostrar detalhes' : 
-                                 (this.innerHTML.includes('Práticas') ? '🌿 Mostrar detalhes' : '💰 Mostrar detalhes');
+    updateBtn.addEventListener('click', alterarMensagemHero);
+    resetMsgBtn.addEventListener('click', resetMensagemHero);
+    
+    // ========== 2. FORMULÁRIO: ARMAZENAR DADOS E EXIBIR SAUDAÇÃO PERSONALIZADA ==========
+    const form = document.getElementById('user-form');
+    const nameInput = document.getElementById('user-name');
+    const cityInput = document.getElementById('user-city');
+    const emailInput = document.getElementById('user-email');
+    const greetingDiv = document.getElementById('greeting-message');
+    const feedbackDiv = document.getElementById('form-feedback');
+    
+    // Função que processa as variáveis e gera mensagem personalizada
+    function processarCadastro(event) {
+        event.preventDefault(); // Evita recarregar a página
+        
+        // Armazenando valores em variáveis
+        usuarioNome = nameInput.value.trim();
+        usuarioCidade = cityInput.value.trim();
+        usuarioEmail = emailInput.value.trim();
+        
+        // Validação simples
+        if (usuarioNome === "") {
+            alert("Por favor, informe seu nome para personalizarmos a saudação.");
+            return;
+        }
+        
+        // 1) Atualizar a saudação na área de destaque (hero)
+        let saudacaoPersonalizada = "";
+        if (usuarioCidade !== "") {
+            saudacaoPersonalizada = `🌾 Olá, ${usuarioNome}! Produtor de ${usuarioCidade}, seja bem-vindo ao Agro Forte. Juntos construímos um futuro sustentável! 🚜💚`;
+        } else {
+            saudacaoPersonalizada = `🌾 Olá, ${usuarioNome}! Seja bem-vindo ao Agro Forte. Vamos equilibrar produção e meio ambiente! 🌱`;
+        }
+        greetingDiv.innerHTML = saudacaoPersonalizada;
+        
+        // 2) Exibir um feedback no próprio formulário com os dados processados
+        const mensagemFeedback = `
+            <strong>✅ Dados armazenados com sucesso!</strong><br>
+            📋 Nome: ${usuarioNome}<br>
+            📍 Local: ${usuarioCidade || "Não informado"}<br>
+            📧 E-mail: ${usuarioEmail || "Não informado"}<br>
+            <small>💡 Agora sua saudação personalizada aparece no topo da página.</small>
+        `;
+        feedbackDiv.innerHTML = mensagemFeedback;
+        feedbackDiv.style.display = "block";
+        
+        // Opcional: limpa os campos após 3 segundos? não, apenas mantemos para mostrar.
+        // Pequeno efeito de destaque na saudação
+        greetingDiv.style.animation = 'none';
+        setTimeout(() => { greetingDiv.style.animation = ''; }, 10);
+        
+        // Console para demonstrar o uso das variáveis
+        console.log(`✅ Variáveis armazenadas: Nome="${usuarioNome}", Cidade="${usuarioCidade}", Email="${usuarioEmail}"`);
+    }
+    
+    // Adiciona o evento de submit no formulário
+    form.addEventListener('submit', processarCadastro);
+    
+    // ========== 3. BOTÃO CTA COM ALERTA USANDO VARIÁVEL GLOBAL (SE JÁ CADASTROU) ==========
+    const ctaBtn = document.getElementById('cta-button');
+    ctaBtn.addEventListener('click', () => {
+        // Verifica se já existe um nome armazenado
+        if (usuarioNome !== "") {
+            alert(`🌿 Olá ${usuarioNome}! Em breve entraremos em contato com cases de sucesso no e-mail ${usuarioEmail || "cadastrado"}. Obrigado por fazer parte do agro sustentável!`);
+        } else {
+            alert("🌿 Conheça cases reais: fazendas que aumentaram produtividade em 32% com manejo regenerativo. Cadastre-se acima para receber conteúdos exclusivos!");
+        }
+    });
+    
+    // ========== 4. PEQUENA ANIMAÇÃO/MANIPULAÇÃO DE ESTATÍSTICA ==========
+    // Exemplo de como podemos modificar uma estatística via JS usando variável
+    let novoIndiceProdutividade = 35; // variável para demonstrar processamento
+    const statProdElement = document.getElementById('stat-prod');
+    
+    // Função opcional: atualizar estatística após 5 segundos (exemplo de processamento)
+    setTimeout(() => {
+        // Processamento hipotético: novo índice de produtividade
+        let aumentoExtra = 3; // variável de suporte
+        let totalAtualizado = 32 + aumentoExtra;
+        statProdElement.innerHTML = `+${totalAtualizado}%`;
+        console.log(`📊 Estatística atualizada via JS: +${totalAtualizado}% de produtividade sustentável`);
+    }, 5000);
+    
+    // Mensagem inicial no console mostrando uso de variáveis
+    console.log("🚀 Site carregado. Variáveis de usuário inicialmente vazias aguardando cadastro.");
+    
+    // Bônus: função que mostra/esconde detalhes dos cards usando toggle simples (extra)
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((card, index) => {
+        // Adiciona um pequeno botão em cada card (opcional sem quebrar layout)
+        let btnDetalhe = document.createElement('button');
+        btnDetalhe.textContent = '📌 Ver dica';
+        btnDetalhe.style.marginTop = '16px';
+        btnDetalhe.style.padding = '8px 16px';
+        btnDetalhe.style.borderRadius = '40px';
+        btnDetalhe.style.border = '1px solid #4c9a2a';
+        btnDetalhe.style.backgroundColor = 'white';
+        btnDetalhe.style.color = '#2c6e2f';
+        btnDetalhe.style.cursor = 'pointer';
+        btnDetalhe.style.fontWeight = '600';
+        
+        let detalheExtra = document.createElement('div');
+        detalheExtra.style.display = 'none';
+        detalheExtra.style.marginTop = '12px';
+        detalheExtra.style.fontSize = '0.85rem';
+        detalheExtra.style.backgroundColor = '#f5f9ef';
+        detalheExtra.style.padding = '10px';
+        detalheExtra.style.borderRadius = '16px';
+        
+        // Conteúdo variável baseado no card
+        if (index === 0) detalheExtra.innerHTML = '💡 Dica: sensores de solo conectados reduzem custos em até 25%';
+        else if (index === 1) detalheExtra.innerHTML = '🌱 Dica: sistemas agroflorestais aumentam a biodiversidade local';
+        else detalheExtra.innerHTML = '📈 Dica: práticas regenerativas geram créditos de carbono comercializáveis';
+        
+        card.appendChild(btnDetalhe);
+        card.appendChild(detalheExtra);
+        
+        btnDetalhe.addEventListener('click', () => {
+            if (detalheExtra.style.display === 'none') {
+                detalheExtra.style.display = 'block';
+                btnDetalhe.textContent = '🙈 Ocultar dica';
             } else {
-                detailsDiv.classList.add('show');
-                if (targetId === 'details1') this.innerHTML = '🙈 Ocultar detalhes';
-                else if (targetId === 'details2') this.innerHTML = '🙈 Ocultar práticas';
-                else this.innerHTML = '🙈 Ocultar indicadores';
+                detalheExtra.style.display = 'none';
+                btnDetalhe.textContent = '📌 Ver dica';
             }
         });
     });
-
-    // ======================== 3. CONTADORES DINÂMICOS (ATUALIZA NA TELA) ========================
-    // Valores finais que queremos exibir
-    const targetValues = {
-        prod: 32,      // +32%
-        water: 46,     // -46%
-        co2: 2.1       // 2.1 milhões (vamos exibir como 2.1M)
-    };
-    
-    let currentValues = { prod: 0, water: 0, co2: 0 };
-    const counterProd = document.getElementById('counterProd');
-    const counterWater = document.getElementById('counterWater');
-    const counterCo2 = document.getElementById('counterCo2');
-    
-    // Função de animação dos contadores (incremento suave)
-    function animateCounters() {
-        // Verifica se os números já atingiram os alvos
-        if (currentValues.prod < targetValues.prod) {
-            currentValues.prod += Math.ceil((targetValues.prod - currentValues.prod) / 10);
-            if (currentValues.prod > targetValues.prod) currentValues.prod = targetValues.prod;
-            counterProd.innerText = `+${Math.floor(currentValues.prod)}%`;
-        }
-        if (currentValues.water < targetValues.water) {
-            currentValues.water += Math.ceil((targetValues.water - currentValues.water) / 10);
-            if (currentValues.water > targetValues.water) currentValues.water = targetValues.water;
-            counterWater.innerText = `-${Math.floor(currentValues.water)}%`;
-        }
-        if (currentValues.co2 < targetValues.co2) {
-            currentValues.co2 += 0.15;
-            if (currentValues.co2 > targetValues.co2) currentValues.co2 = targetValues.co2;
-            counterCo2.innerText = `${currentValues.co2.toFixed(1)}M`;
-        }
-        
-        // Se todos os contadores atingiram o alvo, para a animação
-        if (currentValues.prod >= targetValues.prod && currentValues.water >= targetValues.water && currentValues.co2 >= targetValues.co2) {
-            clearInterval(interval);
-        }
-    }
-    
-    // Inicia animação quando a página carrega e também ao rolar para a seção (para garantir que veja)
-    let interval = setInterval(animateCounters, 50);
-    
-    // Também podemos adicionar um observer para reiniciar ou garantir, mas manteremos o start automático.
-    // Adicional: Alterar conteúdo da mensagem dinâmica quando os contadores terminarem? Vamos incrementar interação.
-    
-    // ======================== 4. ALTERAR TEXTO DA DIV DINÂMICA (exemplo de mais manipulação) ========================
-    const dynamicMsgDiv = document.getElementById('dynamicMessage');
-    
-    // Troca mensagem a cada 8 segundos (exemplo funcional de manipulação periódica)
-    const messages = [
-        "💡 A sustentabilidade é o caminho para o agro do futuro.",
-        "🌎 Cada hectare preservado garante colheitas prósperas por décadas.",
-        "📊 Agroforte reduz emissões e aumenta lucro: metas 2030.",
-        "🤝 Junte-se à revolução verde: produção com consciência."
-    ];
-    let msgIndex = 0;
-    setInterval(() => {
-        msgIndex = (msgIndex + 1) % messages.length;
-        dynamicMsgDiv.innerHTML = `✨ ${messages[msgIndex]}`;
-    }, 7000);
-    
-    // CTA interativo (alerta ao clicar)
-    const ctaBtn = document.getElementById('ctaAlertBtn');
-    ctaBtn.addEventListener('click', () => {
-        alert("🌿 Conheça cases reais: fazendas que aumentaram produtividade em 32% com manejo regenerativo. Acesse nossa área de cases em breve!");
-    });
-    
-    // Simulação de update de contador ao rolar a página para a seção (reforço visual)
-    // Não reiniciamos contadores para não quebrar a experiência, já começa animando.
-    
-    console.log("✅ JavaScript ativo: manipulação de DOM (texto, toggle, contadores e mensagens dinâmicas)");
 </script>
 </body>
 </html>
